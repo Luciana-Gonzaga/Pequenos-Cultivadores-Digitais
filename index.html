@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2f6b45">
+<title>Pequenos Cultivadores Digitais | Horta da Creche</title>
+<style>
+:root{--green:#2f6b45;--green2:#4f8c5c;--mint:#e8f4e7;--cream:#fff9ed;--yellow:#f7d774;--pink:#f5c8c3;--ink:#25372b;--muted:#617266;--line:#dce8dc;--white:#fff}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#f5f8f1;color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,#e8f4e7,#fff4d7);padding:26px 18px 20px;border-bottom:1px solid var(--line)}
+.wrap{max-width:1050px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.logo{width:68px;height:68px;flex:none}.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--green)}h1{font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.1;margin:.2rem 0 .5rem;color:var(--green)}h2{color:var(--green);font-size:1.45rem;margin:0 0 12px}h3{margin:.2rem 0 .5rem;color:var(--green)}p{margin:.45rem 0 .8rem}.subtitle{max-width:700px;margin-top:10px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 12px #263c2b0b}
+.navinner{display:flex;gap:8px;overflow:auto;padding:10px 14px;max-width:1050px;margin:auto}
+nav a{white-space:nowrap;text-decoration:none;color:var(--green);font-weight:750;font-size:.92rem;padding:8px 12px;border-radius:999px;background:var(--mint)}
+main{max-width:1050px;margin:auto;padding:22px 16px 50px}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:stretch}.panel,.card{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 5px 20px #2f6b4508}.hero .panel{background:var(--cream)}.hero-art{display:flex;align-items:center;justify-content:center;background:var(--mint);min-height:220px;border-radius:20px;border:1px solid var(--line);overflow:hidden}.hero-art svg{width:100%;max-width:330px}.pill{display:inline-block;background:var(--yellow);padding:4px 10px;border-radius:99px;font-size:.8rem;font-weight:800}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.plant{position:relative;overflow:hidden}.plant .emoji{font-size:2.3rem;display:inline-flex;width:58px;height:58px;align-items:center;justify-content:center;background:var(--mint);border-radius:18px;margin-bottom:8px}.plant ul{padding-left:20px;margin:.4rem 0}.note{background:#fff6d9;border-left:5px solid #e6bd42;border-radius:10px;padding:12px 14px;margin:12px 0}.soft{color:var(--muted);font-size:.92rem}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.step{background:var(--mint);border-radius:15px;padding:14px}.step b{display:block;color:var(--green);margin-bottom:4px}
+section{margin-top:24px;scroll-margin-top:78px}.qrgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.qritem{border:1px dashed #9ab99b;border-radius:16px;padding:14px;text-align:center;background:#fcfffb}.qrbox{min-height:170px;display:flex;align-items:center;justify-content:center;background:white;margin:10px auto;border-radius:8px}.qrbox canvas,.qrbox img{max-width:100%;height:auto}.button,button{border:0;background:var(--green);color:#fff;border-radius:11px;padding:10px 14px;font:inherit;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}.button.secondary,button.secondary{background:var(--mint);color:var(--green);border:1px solid #c9dfca}.button:focus,button:focus,input:focus,textarea:focus,select:focus{outline:3px solid #f7d774;outline-offset:2px}
+form .fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}label{display:block;font-weight:750;font-size:.92rem;margin-bottom:5px}input,select,textarea{width:100%;border:1px solid #b9cdbb;border-radius:10px;padding:10px 11px;font:inherit;background:#fff;color:var(--ink)}textarea{min-height:86px;resize:vertical}.full{grid-column:1/-1}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.tablewrap{overflow:auto;margin-top:14px}table{border-collapse:collapse;width:100%;min-width:700px;background:white}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--mint);color:var(--green)}td button{padding:6px 9px;font-size:.85rem}.empty{color:var(--muted);padding:16px;background:#f8fbf7;border-radius:10px}.tiny{font-size:.83rem;color:var(--muted)}footer{background:#e8f4e7;padding:22px 16px;color:#35543b}footer .wrap{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.grid,.steps,.qrgrid{grid-template-columns:1fr}.hero-art{min-height:160px}.brand{align-items:flex-start}.logo{width:54px;height:54px}form .fields{grid-template-columns:1fr}.full{grid-column:auto}}
+@media print{nav,.actions,.button,button,form,#qr-status,footer{display:none!important}body{background:white}.panel,.card{box-shadow:none;break-inside:avoid}main{padding:0}.qrgrid,.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="brand">
+   <svg class="logo" viewBox="0 0 100 100" role="img" aria-label="Ilustração de uma muda">
+    <circle cx="50" cy="50" r="48" fill="#fff"/><path d="M50 78V40" stroke="#2f6b45" stroke-width="6" stroke-linecap="round"/><path d="M49 52C20 54 19 29 22 22c25 0 35 12 27 30Z" fill="#65a96c"/><path d="M51 43C53 19 76 16 84 20c-1 24-14 33-33 23Z" fill="#3f8551"/><path d="M27 81h46" stroke="#a56c45" stroke-width="6" stroke-linecap="round"/><circle cx="74" cy="72" r="10" fill="#f7d774"/><circle cx="71" cy="70" r="1.5" fill="#25372b"/><circle cx="77" cy="70" r="1.5" fill="#25372b"/><path d="M71 75q3 4 6 0" stroke="#25372b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+   </svg>
+   <div><div class="eyebrow">Projeto educativo · UNIP Sustentável</div><h1>Pequenos Cultivadores Digitais</h1><div>Guia da horta, QR Codes e diário de acompanhamento</div></div>
+  </div>
+  <p class="subtitle">Uma horta pequena para aprender, cuidar e compartilhar: crianças e funcionários descobrem como cultivar cebolinha, coentro e salsa, com apoio de recursos digitais simples.</p>
+ </div>
+</header>
+<nav aria-label="Navegação principal"><div class="navinner">
+ <a href="#guia">Guia da horta</a><a href="#plantas">Conheça as plantas</a><a href="#qr">QR Codes</a><a href="#diario">Diário digital</a><a href="#seguranca">Cuidados e segurança</a>
+</div></nav>
+<main>
+ <div class="hero">
+  <div class="panel">
+   <span class="pill">🌱 Aprender fazendo</span>
+   <h2 style="margin-top:12px">Nossa horta cabe em um cantinho!</h2>
+   <p>Não precisamos de um quintal grande. Vasos ou jardineiras estáveis podem transformar um espaço iluminado em um lugar de observação e descoberta.</p>
+   <p><b>O que vamos aprender?</b> O que uma planta precisa para viver, como cuidar da água e do solo e por que os temperos fazem parte da nossa alimentação.</p>
+   <p class="soft">Público: crianças da creche e funcionários · Área: Meio Ambiente, Educação e Tecnologia.</p>
+  </div>
+  <div class="hero-art" aria-label="Ilustração de três vasinhos"><svg viewBox="0 0 340 230" role="img">
+   <circle cx="170" cy="105" r="85" fill="#fff9ed"/><path d="M54 185h232" stroke="#8ab58c" stroke-width="4" stroke-linecap="round"/>
+   <g transform="translate(48 76)"><path d="M16 75h62l-8 54H24Z" fill="#e9a58d"/><path d="M13 75h68" stroke="#b76e5c" stroke-width="7" stroke-linecap="round"/><path d="M47 76V25" stroke="#2f6b45" stroke-width="4"/><ellipse cx="34" cy="34" rx="15" ry="8" transform="rotate(25 34 34)" fill="#5c9b5d"/><ellipse cx="59" cy="23" rx="17" ry="9" transform="rotate(-32 59 23)" fill="#76b96f"/><ellipse cx="43" cy="12" rx="13" ry="7" transform="rotate(-20 43 12)" fill="#3f8551"/></g>
+   <g transform="translate(129 56)"><path d="M16 95h62l-8 54H24Z" fill="#f7d774"/><path d="M13 95h68" stroke="#d4aa3d" stroke-width="7" stroke-linecap="round"/><path d="M47 96V33" stroke="#2f6b45" stroke-width="4"/><ellipse cx="34" cy="47" rx="14" ry="8" transform="rotate(25 34 47)" fill="#5c9b5d"/><ellipse cx="59" cy="34" rx="17" ry="9" transform="rotate(-32 59 34)" fill="#76b96f"/><ellipse cx="41" cy="21" rx="13" ry="7" transform="rotate(-20 41 21)" fill="#3f8551"/></g>
+   <g transform="translate(212 84)"><path d="M16 67h62l-8 54H24Z" fill="#a7cce2"/><path d="M13 67h68" stroke="#689eb9" stroke-width="7" stroke-linecap="round"/><path d="M47 68V27" stroke="#2f6b45" stroke-width="4"/><ellipse cx="34" cy="36" rx="14" ry="8" transform="rotate(25 34 36)" fill="#5c9b5d"/><ellipse cx="59" cy="26" rx="17" ry="9" transform="rotate(-32 59 26)" fill="#76b96f"/><ellipse cx="42" cy="13" rx="13" ry="7" transform="rotate(-20 42 13)" fill="#3f8551"/></g>
+   <circle cx="272" cy="42" r="13" fill="#f7d774"/><path d="M272 20v-7m0 58v-7m22-22h7m-58 0h7m38-16 5-5m-43 43 5-5m33 0 5 5m-43-43 5 5" stroke="#e5b93f" stroke-width="3" stroke-linecap="round"/>
+  </svg></div>
+ </div>
+
+ <section id="guia">
+  <h2>📘 Guia digital da horta</h2>
+  <div class="card">
+   <h3>1. Preparar o cantinho verde</h3>
+   <ul><li>Escolha um local com luz adequada para as espécies e acesso fácil para os adultos responsáveis.</li><li>Use vasos firmes, limpos, com drenagem e espaço para as raízes.</li><li>Coloque substrato apropriado para cultivo; não use terra contaminada ou resíduos desconhecidos.</li><li>Identifique cada vaso com o nome da planta e uma ilustração.</li></ul>
+   <h3>2. Como cuidar</h3>
+   <ul><li>Observe o substrato antes de regar. Ele deve ficar úmido, não encharcado.</li><li>Regue devagar, de preferência com um regador pequeno manuseado sob supervisão.</li><li>Observe se a planta recebe luz suficiente para a espécie.</li><li>Retire folhas secas com ajuda de um adulto e mantenha o local organizado.</li></ul>
+   <h3>3. Aprender brincando</h3>
+   <ul><li>Convide as crianças a observar cores, formatos e cheiros das folhas sem arrancá-las.</li><li>Conte quantos vasos existem e compare o tamanho das plantas.</li><li>Desenhe a planta e registre o que mudou desde a última observação.</li><li>Converse sobre como a água deve ser usada sem desperdício.</li></ul>
+   <div class="note"><b>Uma horta é uma experiência contínua:</b> em dois dias é possível montar os vasos e fazer as atividades iniciais; o crescimento das plantas e a colheita acontecem depois e dependem dos cuidados, da espécie e das condições do local.</div>
+  </div>
+ </section>
+
+ <section id="plantas">
+  <h2>🌿 Conheça as plantas</h2>
+  <p>As orientações abaixo são gerais. Ajuste a rega e a iluminação às condições reais da creche e às instruções do fornecedor das mudas.</p>
+  <div class="grid">
+   <article class="card plant"><div class="emoji" aria-hidden="true">🌱</div><h3>Cebolinha</h3><p>Tem folhas verdes compridas e é usada para temperar muitos pratos.</p><ul><li><b>Luz:</b> local claro, com sol adequado ao cultivo.</li><li><b>Água:</b> manter o substrato levemente úmido, sem encharcar.</li><li><b>Observar:</b> folhas novas e crescimento em altura.</li></ul><p class="soft">Pergunta para as crianças: “As folhas parecem compridas ou redondas?”</p></article>
+   <article class="card plant"><div class="emoji" aria-hidden="true">🍃</div><h3>Coentro</h3><p>É uma erva aromática usada em diferentes receitas.</p><ul><li><b>Luz:</b> local iluminado, evitando calor excessivo.</li><li><b>Água:</b> regar conforme a secagem do substrato.</li><li><b>Observar:</b> formato delicado das folhas.</li></ul><p class="soft">Pergunta para as crianças: “O desenho das folhas é igual ao das outras plantas?”</p></article>
+   <article class="card plant"><div class="emoji" aria-hidden="true">🌿</div><h3>Salsa</h3><p>É uma erva aromática de folhas recortadas, usada como tempero.</p><ul><li><b>Luz:</b> local claro, com condições adequadas à espécie.</li><li><b>Água:</b> manter umidade equilibrada e boa drenagem.</li><li><b>Observar:</b> formato e quantidade de folhas.</li></ul><p class="soft">Pergunta para as crianças: “Quantas folhinhas conseguimos contar?”</p></article>
+  </div>
+ </section>
+
+ <section id="qr">
+  <h2>📱 QR Codes educativos</h2>
+  <div class="card">
+   <p>Quando esta página estiver publicada na internet, os códigos abaixo apontarão para a seção de cada planta nesta mesma página. Você poderá imprimir as etiquetas e colocá-las junto aos vasos, em local acessível aos adultos.</p>
+   <div class="note" id="qr-status">Preparando os códigos… Para gerar QR Codes que funcionem em outros celulares, esta página precisa estar publicada em um endereço HTTPS público.</div>
+   <div class="qrgrid">
+    <div class="qritem"><h3>🌱 Cebolinha</h3><div class="qrbox" id="qr-cebolinha"></div><div class="tiny" id="url-cebolinha">Link será exibido aqui</div><p><button class="secondary" onclick="downloadQR('cebolinha')">Baixar QR Code</button></p></div>
+    <div class="qritem"><h3>🍃 Coentro</h3><div class="qrbox" id="qr-coentro"></div><div class="tiny" id="url-coentro">Link será exibido aqui</div><p><button class="secondary" onclick="downloadQR('coentro')">Baixar QR Code</button></p></div>
+    <div class="qritem"><h3>🌿 Salsa</h3><div class="qrbox" id="qr-salsa"></div><div class="tiny" id="url-salsa">Link será exibido aqui</div><p><button class="secondary" onclick="downloadQR('salsa')">Baixar QR Code</button></p></div>
+   </div>
+   <p class="tiny">Os códigos são gerados no navegador com base no endereço atual. Não use códigos gerados enquanto a página estiver aberta apenas como arquivo local (file://), pois eles não funcionarão em outros dispositivos. Publique primeiro a página e teste cada código com a câmera de um celular.</p>
+  </div>
+ </section>
+
+ <section id="diario">
+  <h2>📝 Diário digital da horta</h2>
+  <div class="card">
+   <p>Use este diário para registrar as atividades reais. Os registros ficam salvos neste navegador e neste dispositivo. Exporte um arquivo CSV para guardar ou abrir em um programa de planilhas.</p>
+   <form id="entry-form">
+    <div class="fields">
+     <div><label for="date">Data</label><input id="date" type="date" required></div>
+     <div><label for="plant">Planta observada</label><select id="plant" required><option value="Todas">Todas</option><option>Cebolinha</option><option>Coentro</option><option>Salsa</option></select></div>
+     <div><label for="activity">Atividade</label><select id="activity" required><option>Montagem/plantio</option><option>Rega</option><option>Observação</option><option>Atividade educativa</option><option>Manutenção</option><option>Outra</option></select></div>
+     <div><label for="condition">Condição da planta</label><select id="condition"><option>Não avaliada</option><option>Boa aparência</option><option>Substrato seco</option><option>Substrato muito úmido</option><option>Folhas amareladas/secas</option><option>Necessita de avaliação</option></select></div>
+     <div class="full"><label for="notes">Observações (o que foi feito ou notado)</label><textarea id="notes" placeholder="Ex.: as crianças observaram as folhas; funcionário verificou a umidade do substrato."></textarea></div>
+     <div class="full"><label for="responsible">Responsável pelo registro (opcional)</label><input id="responsible" type="text" placeholder="Nome ou função"></div>
+    </div>
+    <div class="actions"><button type="submit">Salvar registro</button><button type="button" class="secondary" onclick="exportCSV()">Exportar diário CSV</button><button type="button" class="secondary" onclick="window.print()">Imprimir página</button></div>
+   </form>
+   <div class="tablewrap" id="records-wrap"><div class="empty">Ainda não há registros. Depois de realizar uma atividade, preencha o formulário acima e clique em “Salvar registro”.</div></div>
+   <div class="actions"><button type="button" class="secondary" onclick="clearRecords()">Apagar registros deste dispositivo</button></div>
+   <p class="tiny">Privacidade: não registre dados pessoais das crianças. Para fotografias, siga as regras de autorização da instituição. O armazenamento local não sincroniza automaticamente com outros dispositivos.</p>
+  </div>
+ </section>
+
+ <section id="seguranca">
+  <h2>🧤 Cuidados e segurança</h2>
+  <div class="card">
+   <ul><li>Um adulto deve supervisionar todas as atividades.</li><li>Não use plantas tóxicas, irritantes ou sem identificação confiável.</li><li>Evite ferramentas cortantes, fertilizantes e produtos químicos ao alcance das crianças.</li><li>Mantenha vasos firmes, drenados e fora das passagens.</li><li>As crianças podem observar e cuidar das plantas, mas não devem comer folhas ou mudas sem autorização e os procedimentos de higiene da creche.</li><li>Evite recipientes com bordas cortantes; recipientes reutilizados devem ser seguros e limpos.</li></ul>
+  </div>
+ </section>
+
+ <section id="ads">
+  <h2>💻 Como este material se conecta a ADS</h2>
+  <div class="steps">
+   <div class="step"><b>Organização da informação</b>O guia reúne conteúdo estruturado por planta e por tema.</div>
+   <div class="step"><b>Acesso digital</b>Os QR Codes conectam o espaço físico às informações na página web.</div>
+   <div class="step"><b>Registro de dados</b>O diário permite cadastrar, consultar e exportar observações em CSV.</div>
+  </div>
+  <p class="soft">Para o relatório acadêmico, descreva os recursos que realmente utilizou e anexe registros da execução, sem afirmar resultados que ainda não foram observados.</p>
+ </section>
+</main>
+<footer><div class="wrap"><div><b>Pequenos Cultivadores Digitais</b><br>Meio Ambiente · Educação · Tecnologia</div><div class="tiny">Material educativo para adaptação pela creche. Verifique as condições do espaço e as orientações da instituição antes do plantio.</div></div></footer>
+
+<script>
+const STORAGE_KEY = "pequenosCultivadoresDiario_v1";
+const $ = (id) => document.getElementById(id);
+let records = [];
+try { records = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"); } catch(e) { records = []; }
+$("date").value = new Date().toLocaleDateString("en-CA");
+
+function saveRecords(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(records)); } catch(e) { alert("Não foi possível salvar neste navegador. Exporte o diário CSV para guardar seus registros."); } renderRecords(); }
+function renderRecords(){
+ const wrap=$("records-wrap");
+ if(!records.length){wrap.innerHTML='<div class="empty">Ainda não há registros. Depois de realizar uma atividade, preencha o formulário acima e clique em “Salvar registro”.</div>';return;}
+ const rows=[...records].reverse().map(r=>`<tr><td>${esc(r.date)}</td><td>${esc(r.plant)}</td><td>${esc(r.activity)}</td><td>${esc(r.condition)}</td><td>${esc(r.notes||"—")}</td><td>${esc(r.responsible||"—")}</td><td><button class="secondary" type="button" onclick="deleteRecord('${r.id}')">Excluir</button></td></tr>`).join("");
+ wrap.innerHTML=`<table><thead><tr><th>Data</th><th>Planta</th><th>Atividade</th><th>Condição</th><th>Observações</th><th>Responsável</th><th>Ação</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+$("entry-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ records.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),date:$("date").value,plant:$("plant").value,activity:$("activity").value,condition:$("condition").value,notes:$("notes").value.trim(),responsible:$("responsible").value.trim()});
+ saveRecords(); $("notes").value=""; $("responsible").value="";
+});
+function deleteRecord(id){if(confirm("Excluir este registro?")){records=records.filter(r=>r.id!==id);saveRecords();}}
+function clearRecords(){if(confirm("Apagar todos os registros salvos neste dispositivo? Exporte antes se precisar guardar uma cópia.")){records=[];saveRecords();}}
+function exportCSV(){
+ if(!records.length){alert("Ainda não há registros para exportar.");return;}
+ const cols=["Data","Planta","Atividade","Condição","Observações","Responsável"];
+ const val=v=>'"'+String(v??"").replace(/"/g,'""')+'"';
+ const lines=[cols.map(val).join(";"),...records.map(r=>[r.date,r.plant,r.activity,r.condition,r.notes,r.responsible].map(val).join(";"))];
+ const blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8;"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="diario-horta-pequenos-cultivadores.csv";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+}
+renderRecords();
+
+const plantAnchors={cebolinha:"cebolinha",coentro:"coentro",salsa:"salsa"};
+function plantSection(id){return document.querySelectorAll(".plant")[({cebolinha:0,coentro:1,salsa:2})[id]];}
+function getQRUrl(id){
+ const url=new URL(window.location.href);
+ url.hash="plant="+id;
+ return url.href;
+}
+function renderQR(){
+ const status=$("qr-status");
+ const isHosted=location.protocol==="https:"||location.protocol==="http:";
+ if(!isHosted){status.textContent="A página ainda está aberta como arquivo local. Publique-a em um endereço web HTTPS para gerar QR Codes que possam ser lidos por outros celulares. Depois de publicada, os códigos serão criados automaticamente.";return;}
+ if(typeof QRCode==="undefined"){status.textContent="Não foi possível carregar o gerador de QR Codes. Verifique a conexão com a internet e recarregue a página.";return;}
+ status.textContent="QR Codes gerados a partir do endereço atual. Leia cada código com outro celular para testar.";
+ Object.keys(plantAnchors).forEach(id=>{
+  const box=$("qr-"+id);box.innerHTML="";
+  new QRCode(box,{text:getQRUrl(id),width:160,height:160,colorDark:"#183c27",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});
+  $("url-"+id).textContent=getQRUrl(id);
+ });
+ if(location.hash.startsWith("#plant=")){
+  const id=location.hash.slice(7);
+  if(plantAnchors[id]){const el=plantSection(id);if(el){setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),250);}}
+ }
+}
+function downloadQR(id){
+ const box=$("qr-"+id);const canvas=box.querySelector("canvas");const img=box.querySelector("img");
+ if(!canvas&&!img){alert("Os QR Codes só podem ser gerados depois que a página for publicada em um endereço web e estiver conectada à internet.");return;}
+ const a=document.createElement("a");a.download="qr-"+id+".png";a.href=canvas?canvas.toDataURL("image/png"):img.src;a.click();
+}
+const qrScript=document.createElement("script");
+qrScript.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
+qrScript.onload=renderQR;qrScript.onerror=()=>{if(location.protocol==="http:"||location.protocol==="https:")$("qr-status").textContent="Não foi possível carregar o gerador de QR Codes. Verifique a conexão e recarregue a página.";};
+document.head.appendChild(qrScript);
+</script>
+</body>
+</html>
